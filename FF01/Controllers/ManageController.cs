@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using FF01.Models;
+using FF01.Data.Models;
 using FF01.Models.ManageViewModels;
 using FF01.Services;
 
