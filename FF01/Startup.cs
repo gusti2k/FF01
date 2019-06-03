@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using FF01.Services;
 using FF01.Data;
 using FF01.Data.Models;
+using FF01.Service;
 
 namespace FF01
 {
@@ -32,7 +33,7 @@ namespace FF01
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddScoped<IForum, ForumService>();
             services.AddMvc();
         }
 
