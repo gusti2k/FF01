@@ -1,8 +1,6 @@
 ﻿using FF01.Data;
-using FF01.Data.Models;
 using FF01.Models.Forum;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace FF01.Controllers
@@ -10,6 +8,7 @@ namespace FF01.Controllers
     public class ForumController : Controller
     {
         private readonly IForum _forumService;
+        private readonly IPost _postService;
 
 
         public ForumController(IForum forumService)
@@ -32,6 +31,15 @@ namespace FF01.Controllers
             };
 
             return View(model);
+        }
+
+        public IActionResult Topic(int id)
+        {
+            var forum = _forumService.GetByID(id);
+
+            var postListings = 
+            var posts = _postService.GetFilteredPosts(id);
+            return null;
         }
     }
 }
