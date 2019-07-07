@@ -8,13 +8,15 @@ namespace FF01.Data
 {
     public interface IPost
     {
-        IPost GetByID(int id);
+        Post GetByID(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFilteredPosts(string searchQuery);
+        IEnumerable<Post> GetPostsByForum(int id);
 
         Task Add(Post post);
         Task Delete(int id);
         Task EditPostContent(int id, string newContent);
+        
 
         //Task AddReply(PostReply reply);
     }

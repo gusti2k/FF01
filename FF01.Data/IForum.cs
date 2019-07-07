@@ -6,8 +6,7 @@ namespace FF01.Data
 {
     public interface IForum
     {
-        IForum GetByID(int id);
-
+        Forum GetByID(int id);
         IEnumerable<Forum> GetAll();
         IEnumerable<ApplicationUser> GetAllActiveUsers();
 

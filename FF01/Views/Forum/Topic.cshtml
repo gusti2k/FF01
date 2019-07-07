@@ -1,0 +1,59 @@
+﻿@model FF01.Models.Forum.ForumTopicModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (Model.Posts.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model.Posts)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Post" asp-action="Index" asp-route-id="@item.Id">
+                            @item.Title
+                        </a>                           
+                    </td>
+                    <td>
+                        @item.AuthorName
+                    </td>
+                    <td>
+                        @item.DatePoster
+                    </td>
+                    <td>
+                        @item.RepliesCount
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+ }
+
+else {
+     <div class="notPosts">
+        <h3>
+            No Items in the @Model.Forum.Name yet
+
+            <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id">
+                <span>Create</span>
+            </a>
+        </h3>
+     </div>
+}
