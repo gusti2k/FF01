@@ -17,6 +17,13 @@ namespace FF01.Controllers
 
         public IActionResult Index(int id)
         {
+            var post = _postService.GetByID(id);
+
+            var model = new PostIndexModel
+            {
+
+            };
+
             return null;
         }
     }
