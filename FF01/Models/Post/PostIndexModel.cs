@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FF01.Controllers
+
+namespace FF01.Models.Post
 {
     public class PostIndexModel
     {
@@ -10,7 +11,7 @@ namespace FF01.Controllers
         public string AuthorId { get; set; }
         public string AuthorName { get; set; }
         public string AuthorImageUrl { get; set; }
-        public string AuthorRating { get; set; }
+        public int AuthorRating { get; set; }
         public DateTime Created { get; set; }
         public string PostContent { get; set; }
 

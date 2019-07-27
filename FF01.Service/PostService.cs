@@ -1,5 +1,6 @@
 ﻿using FF01.Data;
 using FF01.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,11 @@ namespace FF01.Service
 
         public Post GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _context.Posts.Where(p => p.Id == id)
+                .Include(post => post.User)
+                .Include(post => post.Replies).ThenInclude(r => r.User)
+                .Include(post => post.Forum)
+                .First();
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
